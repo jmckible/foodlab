@@ -1,0 +1,16 @@
+<h1>Forgot Your Password?</h1>
+
+<% form_tag send_new_password_path do %>
+  <h2>Email</h2>
+  <p><%= text_field_tag :email %></p>
+  
+  <%- unless flash[:notice].blank? -%>
+    <p class="notice"><%= flash[:notice] %></p>
+  <%- end -%>
+  
+  <p><%= submit_tag 'Reset Password' %></p>
+<% end %>
+
+<p><%= link_to 'Login', new_session_path %></p>
+
+<p><%= link_to 'Create account', new_user_path %></p>

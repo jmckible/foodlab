@@ -1,0 +1,27 @@
+<div id="Main">
+  <h1>Welcome</h1>
+  <p>
+    Food Lab is a collaborative cookbook.  You can input your favorite recipes and find delicious new dishes.  Whenever you see a recipe you like, tag it, and it'll become part of your personalized cookbook.
+    
+    To get started,
+    <%- if logged_in? -%>
+      <%= link_to 'add your favorite recipe', new_recipe_path %> and tag away.
+    <%- else -%>
+      <%= link_to 'create an account', new_user_path %> and add some recipes. 
+    <%- end -%>
+  </p>
+  
+  <h1>New Recipes</h1>
+  <%= render :partial=>'recipes/preview', :collection=>Recipe.newest(3) %>
+  
+  <h1>Highest Rated Recipes</h1>
+  <%= render :partial=>'recipes/preview', :collection=>Recipe.top %>
+</div>
+
+<div id="Sidebar">
+  <h1>Top Tags</h1>
+  <div class="tag_list"><%= tag_cloud Tag.popular %></div>
+  
+  <h1>Popular Ingredients</h1>
+  <div class="tag_list"><%= ingredient_cloud Ingredient.popular %></div>
+</div>

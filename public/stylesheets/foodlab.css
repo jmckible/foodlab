@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #FFFE84;
+  text-decoration: none;
+}
+a:hover{
+  color: #FF865D;
+}
+
+a.tag { color: #fff; }
+a.tag:hover { border-bottom: 1px dotted;}
+
+/* tagging levels */
+a.one { color: #999; }
+a.three { font-size: 1.4em; }
+
+body {
+  color: #fff;
+  font-family: helvetica, verdana, sans-serif;
+  font-size: small;
+  margin: 0;
+  padding: 0;
+  background-color: #333435;
+}
+/* adjustment for IE5 */
+body {
+	font-size: x-small; /* IE5 Win */
+  voice-family: "\"}\""; 
+  voice-family: inherit;
+  font-size: small;
+}
+html>body { /* be nice to Opera */
+	font-size: small;
+}
+
+.clear_fix:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .clear_fix {height: 1%;}
+/* End hide from IE-mac */
+
+#Content {
+  clear: both;
+  margin-top: 3em;
+}
+
+#errorExplanation {
+  margin-bottom: 2em;
+}
+
+.fixed_width {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#Footer {
+	margin: 0 auto 1.5em auto;
+  padding: 6em 2em 0.5em 2em;
+  text-align: center; 
+	color: #999;
+}
+#Footer a { color: #666;}
+
+h1{
+  font-weight: normal;
+  font-size: 1.75em;
+}
+
+h2{
+  font-weight: normal;
+  font-size: 1.25em;
+}
+
+#Header {
+  color: #E9EACD;
+  font-size: 1.25em;
+}
+#Header h1 {margin-bottom: 0;}
+
+#Header a { color: #E9EACD;}
+#Header a:hover { text-decoration: underline; }
+
+.ingredients {
+  margin-bottom: 2em;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+input { 
+  font-size: 1.2em; 
+  font-family: helvetica, verdana, sans-serif;
+  padding: 0.1em 0.2em;
+  border: 0;
+  background-color: #fffff0;
+}
+input.dim { color: #666; }
+input.selected { color: #000;}
+input.submit { margin-top: 2em;}
+
+#Logo {
+  float: left;
+  padding-top: 0.5em;
+}
+
+#Main{
+  float:left;
+  width: 500px;
+}
+
+#Navigation {
+  margin-left: 14em;
+  padding-top: 1.5em;
+  list-style: none;
+}
+#Navigation li{
+  float: left;
+  margin-right: 2em;
+}
+
+#Navigation li.sub{
+  font-size: 75%;
+  margin-top: 0.2em;
+}
+
+p {
+  margin-bottom: 2em;
+  line-height: 1.5em;
+}
+
+#Rate {
+  margin-bottom: 2em;
+}
+
+.recipe {
+  margin: 0.5em 0 2em 0;
+  line-height: 1.5em;
+}
+
+.requirement {
+  margin-bottom: 1em;
+}
+
+.requirement .quantity { width: 8em; }
+.requirement .name { width: 20em;}
+
+#Requirements { margin-top: 2em;}
+#Requirements #Heading {margin-bottom: 0.5em;}
+#Requirements #Heading .column {margin-left: 7em;}
+
+#Search input{
+  width: 7em;
+  float: right;
+  margin-top: -0.5em;
+}
+
+#Sidebar{
+  margin-left: 550px;
+}
+
+.tag_list{
+  margin-bottom: 3em;
+  line-height: 1.5em;
+}
+
+textarea {
+  font-size: 1.2em;
+  font-family: helvetica, verdana, sans-serif;
+  padding: 0.2em;
+  background-color: #fffff0;
+  border: 0;
+  line-height: 1.5em;
+}
+
+ul.tags{
+  margin-bottom: 2em;
+  list-style: none;
+  line-height: 1.5em;
+}

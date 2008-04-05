@@ -1,0 +1,54 @@
+<%- @page_title = h(@recipe.name) -%>
+<div id="Main">
+  <h1><%=h @recipe.name %></h1>
+  <p><%= link_to h(@recipe.user.name), @recipe.user %></p>
+  
+  <%- if editable_recipe? -%>
+    <p><%= link_to 'Edit', edit_recipe_path(@recipe) %></p>
+  <%- end -%>
+  
+  <ul class="ingredients">
+    <%- for requirement in @recipe.requirements -%>
+      <li><%=h requirement.quantity %> <%= link_to h(requirement.ingredient.name), requirement.ingredient, :class=>:tag %></li>
+    <%- end -%>
+  </ul>
+
+  <%= @recipe.process %>
+  
+  <%- if logged_in? -%>
+    <p><%= link_to 'Leave a comment', new_recipe_comment_path(@recipe) %></p>
+  <%- end -%>
+  
+  <%- if @recipe.comments.size > 0 -%>
+    <h1>Comments</h1>
+    <%= render :partial=>'comments/show', :collection=>@recipe.comments %>
+  <%- end -%>
+</div>
+
+<div id="Sidebar">
+  <h1 id="Rating"><%= @recipe.rating %></h1>
+  
+  <%- if logged_in? -%>
+    <div id="Meaning">&nbsp;</div>
+    <div id="Rate">
+      <%- rating = current_user.ratings.find_by_recipe_id(@recipe.id) -%>
+      <%- if rating.nil? -%>
+        <%= render :partial=>'ratings/new', :locals=>{:recipe=>@recipe} %>
+      <%- else -%>
+        <%= render :partial=>'ratings/edit', :object=>rating %>
+      <%- end -%>
+    </div>
+  
+    <%- if @recipe.taggings.find_all_by_user_id(current_user.id).size > 0 -%>
+      <h2>My Tags</h2>
+    <%- end -%>
+    <div id="MyTags">
+      <%= render :partial=>'tags/list', :locals=>{:recipe=>@recipe} %>
+    </div>
+  <%- end -%>
+  
+  <%- if @recipe.tags.size > 0 -%>
+    <h2>Community Tags</h2>
+    <div class="tag_list"><%= tag_cloud @recipe.tags %></div>
+  <%- end -%>
+</div>

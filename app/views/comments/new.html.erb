@@ -1,0 +1,9 @@
+<h1>New comment</h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for @comment, :url=>recipe_comments_path(@recipe) do |f| %>
+  <p><%= f.text_area :body %></p>
+  <p><%= f.submit 'Create' %></p>
+<% end %>
+

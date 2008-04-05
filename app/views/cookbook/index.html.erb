@@ -1,0 +1,9 @@
+<div id="Main">
+  <h1>My Cookbook</h1>
+  <%= render :partial=>'recipes/preview', :collection=>current_user.bookmarked_recipes %>
+</div>
+
+<div id="Sidebar">
+  <h1>My Tags</h1>
+  <div class="tag_list"><%= tag_cloud current_user.tags %></div>
+</div>

@@ -1,0 +1,32 @@
+<h1>Update Settings</h1>
+
+<%- unless flash[:notice].blank? -%>
+  <p class="notice"><%= flash[:notice] %></p>
+<%- end -%>
+
+<%= error_messages_for :user %>
+
+<% form_for @user do |f| %>
+  <h2>First Name</h2>
+  <p><%= f.text_field :first_name %></p>
+  
+  <h2>Last Name</h2>
+  <p><%= f.text_field :last_name %></p>
+  
+  <h2>Email</h2>
+  <p><%= f.text_field :email %></p>
+  
+  <p><%= submit_tag 'Update' %></p>
+<% end %>
+
+<h1>Change Password</h1>
+
+<% form_for @user do |f| %>
+  <h2>New Password</h2>
+  <p><%= f.text_field :password %></p>
+  
+  <h2>Confirm New Password</h2>
+  <p><%= f.text_field :password_confirmation %></p>
+  
+  <p><%= submit_tag 'Change Password' %></p>
+<% end %>

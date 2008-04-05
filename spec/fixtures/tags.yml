@@ -1,0 +1,17 @@
+fast:
+  id: 1
+  name: fast
+  taggings_count: 3
+  url: fast
+  
+baking:
+  id: 2
+  name: baking
+  taggings_count: 1
+  url: baking
+  
+fish:
+  id: 3
+  name: fish
+  taggings_count: 0
+  url: fish

@@ -1,0 +1,11 @@
+<%- @page_title = "#{h @tag.name.titleize} Recipes" -%>
+<div id="Main">
+  <h1><%=h @tag.name.titleize %> Recipes</h1>
+  <%= render :partial=>'recipes/preview', :collection=>@recipes %>
+  
+  <%= will_paginate @recipes %>
+</div>
+
+<div id="Sidebar">
+
+</div>

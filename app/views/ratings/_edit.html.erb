@@ -1,0 +1,8 @@
+<%- Rating::OPTIONS.each_with_index do |description, i| -%>
+  <%- value = i + 1 -%>
+  <%- if edit.value == value -%>
+    <strong onmouseover="new Element.update($('Meaning'), '<%= description %>')" onmouseout="new Element.update($('Meaning'), '&nbsp;')"><%= value %></strong>
+  <%- else -%>
+    <%= link_to_remote value, {:url=>(rating_path(edit)+"?value=#{value}"), :method=>:put}, {:onmouseover=>"new Element.update($('Meaning'), '#{description}')", :onmouseout=>"new Element.update($('Meaning'), '&nbsp;')"} %>
+  <%- end -%>
+<%- end -%>

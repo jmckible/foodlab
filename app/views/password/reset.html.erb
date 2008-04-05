@@ -1,0 +1,7 @@
+<h1>Password Reset Request</h1>
+
+<%- if @user.nil? -%>
+  <p>Say what? Trying to reset a password?  <%= link_to 'Try again', forgot_password_path %></p>
+<%- else -%>
+  <p>Check your email for your new password.</p>
+<%- end -%>

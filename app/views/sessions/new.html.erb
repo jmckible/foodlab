@@ -1,0 +1,17 @@
+<% form_tag sessions_path do -%>
+	<h2>Email</h2>
+	<p><%= text_field_tag 'email' %></p>
+
+	<h2>Password</h2>
+	<p><%= password_field_tag 'password' %></p>
+	
+	<%- unless flash[:notice].blank? -%>
+	  <p class="notice"><%= flash[:notice] %></p>
+	<%- end -%>
+
+	<p><%= submit_tag 'Log in' %></p>
+<% end -%>
+
+<p><%= link_to 'Create account', new_user_path %></p>
+
+<p><%= link_to 'Forgot your password?', forgot_password_path %></p>

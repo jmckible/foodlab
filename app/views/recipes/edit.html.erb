@@ -1,0 +1,6 @@
+<%= error_messages_for :recipe %>
+
+<% form_for @recipe, :method=>:put do |f| %>
+  <%= render :partial=>'form', :object=>f %>
+  <p><%= submit_tag 'Update', :class=>:submit %> or <%= link_to 'Go back', @recipe %></p>
+<% end %>

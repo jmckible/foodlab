@@ -1,0 +1,12 @@
+<ul class="tags">
+  <%- for tagging in @recipe.taggings.find_all_by_user_id(current_user.id) -%>
+    <li id="<%= dom_id tagging %>" onmouseover="$('Delete_<%= dom_id tagging %>').toggle()" onmouseout="$('Delete_<%= dom_id tagging %>').toggle()">
+      <%= link_to h(tagging.tag.name), tagging.tag, :class=>:tag %>
+      <span id="Delete_<%= dom_id tagging %>" style="display:none;"><%= link_to_remote 'x', :url=>tagging, :method=>:delete %></span>
+    </li>
+  <%- end -%>
+</ul>
+
+<% form_remote_tag :url=>add_tags_recipe_path(@recipe), :html=>{:method=>:put} do %>
+  <p><%= text_field_tag 'tags', 'Add tags...', :onfocus=>"if (this.value == 'Add tags...'){ this.value = ''; this.className='selected';}", :class=>'dim' %></p>
+<% end %>

@@ -1,0 +1,11 @@
+<%- @page_title = h(@user.name) -%>
+<div id="Main">
+  <h1>Recipes by <%=h @user.name %></h1>
+  <%= render :partial=>'recipes/preview', :collection=>@recipes %>
+  
+  <%= will_paginate @recipes %>
+</div>
+
+<div id="Sidebar">
+
+</div>

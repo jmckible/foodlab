@@ -1,0 +1,60 @@
+SecureAssociations
+==================
+
+More often than not, I find foreign keys need to be protected from bulk updates.  This plugin adds _protected versions of ActiveRecord associations.
+
+
+Example
+=======
+
+Let's say you've got a model like:
+
+class User < ActiveRecord::Base
+  has_many :widgets
+end
+
+class Widget < ActiveRecord::Base
+  belongs_to :user
+end
+
+All well and good until you get to a controller that looks like:
+
+class WidgetsController < ApplicationController
+  def create
+    @widget = current_user.widgets.build(params[:widget])
+    if @widget.save
+      redirect_to widgets_url
+    else
+      render :action=>'edit'
+    end
+  end
+end
+
+Any user could inject widgets into another user with by POST'ing:
+
+:widget=>{:name=>'ownage', :user_id=>'1'}
+
+Solution? Protect the user attributes of Widget
+
+class Widget < ActiveRecord::Base
+  belongs_to :user
+
+	attr_protected :user, :user_id
+end
+
+Of course both user and user_id need to be protected since both can be assigned through the build or update_attributes method. 
+
+
+Enter SecureAssociations
+========================
+
+Rather than clutter up models with lots of attr_protected calls, SecureAssociations provides a shorthand hook so you'll never forget:
+
+class Widget < ActiveRecord::Base
+  belongs_to :user, :protected=>true
+end
+
+You can append any association method with _protected to get the same results.  
+
+
+Copyright (c) 2007 Jordan McKible, released under the MIT license

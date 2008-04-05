@@ -1,0 +1,18 @@
+<h1><%= form.text_field :name %></h1>
+
+<div id="Requirements">
+  <div id="Heading">
+    <span>Quantity</span>
+    <span class="column">Ingredient</span>
+  </div>
+  <%- @recipe.requirements.each_with_index do |requirement, index| -%>
+    <%= render :partial=>'requirement', :locals=>{:requirement=>requirement, :index=>index} %>
+  <%- end -%>
+</div>
+<p id="AddIngredient"><%= link_to_remote 'Add another ingredient', :url=>add_ingredient_to_recipes_path(:index=>@recipe.requirements.size) %>
+
+<h2>Recipe Steps</h2>
+<p><%= form.text_area :process, :cols=>65, :rows=>15 %></p>
+
+<h2>Tags <small>(comma delimited)</small></h2>
+<h2><%= text_field_tag :tags, comma_deliminate(@recipe.tags.from(current_user)) %></h2>

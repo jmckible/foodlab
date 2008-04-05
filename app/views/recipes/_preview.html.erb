@@ -1,0 +1,16 @@
+<div class="recipe">
+  <h2><%= link_to h(preview.name), preview %></h2>
+  <div>by <%= link_to h(preview.user.name), preview.user %></div>
+  
+  <%- if preview.ingredients.size > 0 -%>
+    <div><strong>Ingredients:</strong> <%= link_list preview.ingredients.first(5) %><%= link_to('...', preview, :class=>:tag) if preview.ingredients.size > 5 %></div>
+  <%- end -%>
+  
+  <%- if preview.tags.size > 0 -%>
+    <div><strong>Tags:</strong> <%= link_list preview.tags.top(5) %></div>
+  <%- end -%>
+  
+  <%- unless preview.rating == 0.0 -%>
+    <div><strong>Rating:</strong> <%= preview.rating %></div>
+  <%- end -%>
+</div>

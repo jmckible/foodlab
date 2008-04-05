@@ -1,0 +1,24 @@
+<h1>Create Account</h1>
+
+<%= error_messages_for :user %>
+
+<% form_for(@user) do |f| %>
+  <h2>First Name</h2>
+  <p><%= f.text_field :first_name %></p>
+  
+  <h2>Last Name</h2>
+  <p><%= f.text_field :last_name %></p>
+  
+  <h2>Email</h2>
+  <p><%= f.text_field :email %></p>
+  
+  <h2>Password</h2>
+  <p><%= f.password_field :password %></p>
+  
+  <h2>Confirm password</h2>
+  <p><%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.submit "Create" %></p>
+<% end %>
+
+<p><%= link_to 'Login', new_session_path %></p>

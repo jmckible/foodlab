@@ -1,0 +1,7 @@
+<%= error_messages_for :recipe %>
+
+<h1>New Recipe Name</h1>
+<% form_for @recipe do |f| %>
+  <%= render :partial=>'form', :object=>f %>
+  <p><%= submit_tag 'Create', :class=>:submit %></p>
+<% end %>

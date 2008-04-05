@@ -1,0 +1,6 @@
+<div id="Requirement_<%= index %>" class="requirement">
+  <%- fields_for "requirements[#{index}]", requirement do |r| -%>
+      <%= r.text_field :quantity, :class=>:quantity %>
+      <%= r.text_field :name, :class=>:name %>
+  <%- end -%>
+</div>

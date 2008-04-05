@@ -1,0 +1,20 @@
+pizza_jordan:
+  id: 1
+  created_at: 2007-07-15 12:29:46
+  updated_at: 2007-07-15 12:29:4
+  recipe_id: 1
+  user_id: 1
+  
+pizza_dave:
+  id: 2
+  created_at: 2007-07-15 12:29:46
+  updated_at: 2007-07-15 12:29:4
+  recipe_id: 1
+  user_id: 2
+  
+herring_jordan:
+  id: 3
+  created_at: 2007-07-15 12:29:46
+  updated_at: 2007-07-15 12:29:4
+  recipe_id: 2
+  user_id: 1

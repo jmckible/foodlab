@@ -1,0 +1,5 @@
+<%= @comment.user.name %> said:
+
+<%= @comment.body(:plain) %>
+
+http://foodlab.tv/recipes/<%= @comment.recipe.to_param %>

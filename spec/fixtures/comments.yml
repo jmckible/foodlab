@@ -1,0 +1,15 @@
+jordan_pizza:
+  id: 1
+  created_at: 2007-07-19 22:46:23
+  updated_at: 2007-07-19 22:46:23
+  user_id: 1
+  recipe_id: 1
+  body: it's good
+  
+dave_pizza:
+  id: 2
+  created_at: 2007-07-19 22:46:23
+  updated_at: 2007-07-19 22:46:23
+  user_id: 2
+  recipe_id: 1
+  body: works for me

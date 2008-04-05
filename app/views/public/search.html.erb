@@ -1,0 +1,13 @@
+<%- @page_title = params[:query] + ' Search' -%>
+<div id="Main">
+  <%- if @recipes.total_hits > 0 -%>
+    <h1>Search Results</h1>
+    <%= render :partial=>'recipes/preview', :collection=>@recipes %>
+  <%- else -%>
+    <h1>No results</h1>
+  <%- end -%>
+</div>
+
+<div id="Sidebar">
+
+</div>

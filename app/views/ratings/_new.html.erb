@@ -1,0 +1,4 @@
+<%- Rating::OPTIONS.each_with_index do |description, i| -%>
+  <% value = i + 1 %>
+  <%= link_to_remote value, {:url=>ratings_path(:recipe_id=>@recipe.id, :value=>value)}, {:onmouseover=>"new Element.update($('Meaning'), '#{description}')", :onmouseout=>"new Element.update($('Meaning'), '&nbsp;')"} %>
+<%- end -%>

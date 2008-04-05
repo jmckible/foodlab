@@ -1,0 +1,19 @@
+<%- @page_title = "#{h @ingredient.name.titleize} Recipes" -%>
+<div id="Main">
+  
+  <%- if is_administrator? -%>
+    <% form_for @ingredient do |f| %>
+      <p><%= f.text_field :name %> <%= submit_tag 'Update' %></p>
+    <% end %>
+  <%- end -%>
+  
+  
+  <h1><%=h @ingredient.name.titleize %> Recipes</h1>
+  <%= render :partial=>'recipes/preview', :collection=>@recipes %>
+  
+  <%= will_paginate @recipes %>
+</div>
+
+<div id="Sidebar">
+
+</div>

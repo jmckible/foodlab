@@ -1,0 +1,4 @@
+<h1>All Recipes</h1>
+<%= render :partial=>'recipes/preview', :collection=>@recipes %>
+
+<%= will_paginate @recipes %>
